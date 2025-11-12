@@ -1,0 +1,121 @@
+body {
+  background-color: lab(100% 0.01 -0.01);
+  color: #ffffff;
+  font-family: '', serif;
+  text-align: center;
+}
+
+.destaque {
+  font-family: 'Gravitas One', serif;
+  color: #00bcd4;
+  font-size: 22px; /*aumenta o tamanho da palavra destacada*/
+}
+
+  body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: white;
+      color: white;
+      padding: 15px 40px;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .titulo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      color: #0a48fa;
+      text-decoration: none;
+      font-size: 18px;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color:rgb(5, 5, 106);
+    }
+  
+.container {
+  position: relative; /* Para posicionar os elementos internos de forma absoluta */
+  display: inline-block; /* Ou outro tipo de display que faça a div envolver a imagem */
+  left: 0px;
+
+}
+
+.caixa-sobre {
+  position: absolute; /* Posiciona a caixa de forma absoluta dentro do container */
+  top: 415px;          /* Distância do topo */
+  left: 550px;         /* Distância da esquerda */
+width: 400px;
+height: 170px;
+  z-index: 2;         /* Garante que a caixa fique acima da imagem (que terá z-index: 1 por padrão) */
+  background-color: rgb(5, 5, 106); /* Exemplo de fundo semi-transparente */
+  padding: 10px;
+   
+
+}
+/* --- Estilização para o novo bloco da esquerda (texto e botão) --- */
+.intro-area {
+    /* Ajusta a largura para caber ao lado da imagem e do .caixa-sobre */
+    width: 45%; 
+    float: left; /* Garante que fique à esquerda dos outros elementos */
+    margin-top: 100px; /* Um pouco de espaço do topo, ajuste conforme o design */
+}
+
+.intro-area h1 {
+    font-size: 3em; /* Deixa o título grandão, ajuste o valor se precisar */
+    color: #333; /* Cor escura para o texto */
+    margin-bottom: 20px;
+}
+
+.intro-area p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+/* --- Estilização do Botão de Download --- */
+.btn-download {
+    display: inline-block; /* Para que pareça um botão e possamos dar padding */
+    text-decoration: none; /* Remove o sublinhado padrão do link */
+    color: white; 
+    background-color: #0a48fa; /* Cor de fundo turquesa, use a cor do seu design */
+    padding: 15px 30px; 
+    border-radius: 5px; 
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease; /* Efeito suave ao passar o mouse */
+}
+
+.btn-download:hover {
+    background-color: #262670; /* Cor um pouco mais escura no hover */
+}
+
+/* Se estiver usando Font Awesome, adicione um pequeno espaço entre o ícone e o texto */
+.btn-download i {
+    margin-right: 10px;
+}
+
+/* --- Ajuste no .container para limpar o float --- */
+/* É uma boa prática adicionar isso para garantir que o container envolva todo o conteúdo flutuante */
+.container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
