@@ -7,7 +7,7 @@ body {
 
 .destaque {
   font-family: 'Gravitas One', serif;
-  color: #00bcd4;
+  color: #0a48fa;
   font-size: 22px; /*aumenta o tamanho da palavra destacada*/
 }
 
@@ -118,4 +118,121 @@ height: 170px;
     content: "";
     display: table;
     clear: both;
+}
+
+.bottom-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 10%;
+  background-color: #ffffff; /* ou outra cor que combine com o topo */
+  color: #fff;
+  gap: 50px;
+}
+
+.image-container img {
+  width: 650px;
+  height: auto;
+  border-radius: 0px;
+  box-shadow:0px rgba(0, 0, 0, 0.1);
+}
+
+.text-container {
+  max-width: 500px;
+}
+
+.text-container h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.text-container p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .bottom-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .image-container img {
+    width: 80%;
+  }
+
+  .text-container {
+    max-width: 100%;
+  }
+}
+/* --- Estilo para a Estrutura Geral --- */
+.conhecimentos-tecnicos {
+    /* Define a margem superior para separar da seção anterior */
+    margin-top: 80px; 
+    padding: 0 50px; /* Adiciona um padding nas laterais */
+}
+
+/* --- Estilo para o Título (Header) --- */
+.conhecimentos-tecnicos header h2 {
+    /* Repete o estilo de título que você está usando (Sobre mim) */
+    font-size: 2.5em; 
+    color: #333; /* Cor escura para o título */
+    /* Você pode adicionar uma borda ou linha se o seu estilo tiver */
+    border-bottom: 2px solid #0a48fa; /* Exemplo de linha azul escura */
+    padding-bottom: 10px;
+}
+
+/* --- Estilo para o Container (Grid/Flex) --- */
+.grid-conhecimentos {
+    display: flex; /* Define o layout como Flexbox */
+    gap: 40px; /* Espaço entre as colunas */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha em telas menores */
+    margin-top: 40px;
+}
+
+/* --- Estilo para os Blocos de Conhecimento (section) --- */
+.grid-conhecimentos section {
+    flex: 1; /* Permite que cada seção ocupe uma porção igual de espaço */
+    min-width: 250px; /* Garante que os blocos não fiquem muito estreitos */
+    
+    /* Adicionando um estilo visual (semelhante aos blocos do seu site) */
+    background-color: #F0F0F0; /* Fundo cinza claro para destacar */
+    border-left: 5px solid #0a48fa; /* Linha azul escura na lateral */
+    padding: 20px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Estilo para a Lista de Itens --- */
+.grid-conhecimentos section h3 {
+    color: #0a48fa; /* Cor azul escura para os subtítulos */
+    margin-top: 0;
+}
+
+.grid-conhecimentos section ul {
+    list-style: none; /* Remove os marcadores de lista padrão */
+    padding-left: 0;
+}
+
+.grid-conhecimentos section li {
+    padding: 5px 0;
+    border-bottom: 1px dotted #ccc; /* Linha pontilhada sutil */
+    color: #555;
+}
+.conhecimentos-footer {
+    margin-top: 40px; 
+    padding: 20px 30px; 
+    border-top: 2px dashed #00008B; /* Linha tracejada (dashed) na cor azul escura */
+    background-color: #FAFAFA; /* Fundo muito claro, quase branco */
+    font-size: 0.95em;
+    line-height: 1.6;
+    color: #444; 
+}
+
+.conhecimentos-footer p strong {
+    color: #00008B; 
+    font-weight: bold;
 }
