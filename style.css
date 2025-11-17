@@ -436,41 +436,53 @@ html {
     scroll-behavior: smooth;
 }
 
-/* --- ESTILOS PARA CELULARES (Telas até 600px) --- */
 @media (max-width: 600px) {
     
-    /* 1. Resetando o Layout Principal */
-    /* Garante que o conteúdo principal ocupe 100% */
+    /* Garante que o conteúdo central tenha algum respiro nas laterais */
     .container {
-        padding: 0 15px; /* Adiciona um pequeno padding nas laterais */
-    }
-
-    /* 2. Corrigindo Imagens Grandes */
-    /* Qualquer imagem que você queira limitar no celular */
-    .bottom-section img { 
-        width: 100%; 
-        max-width: 300px; /* Limita o tamanho máximo para não estourar */
-        height: auto;
-    }
-
-    /* 3. Centralizando o Texto (Ex: Título Principal) */
-    .intro-area h1 {
-        text-align: center;
-        font-size: 2.2em; /* Diminui a fonte para caber */
+        padding: 0 15px; 
     }
     
-    /* 4. Corrigindo o Menu de Navegação */
-    /* Em telas pequenas, é melhor empilhar o menu */
-    .menu ul {
-        flex-direction: column; /* Coloca os links um abaixo do outro */
-        gap: 10px;
+    /* Centraliza o conteúdo da primeira área */
+    .intro-area {
+        flex-direction: column; /* Coloca a foto e o texto um abaixo do outro */
+        text-align: center;
+        padding-top: 50px; /* Adiciona espaço extra no topo, se o menu não estiver fixo */
+    }
+
+    /* Reduz e limita o tamanho das imagens para caberem na tela */
+    .intro-area img, .bottom-section img { 
+        width: 80%; 
+        max-width: 200px; /* Garante que a foto de perfil não seja gigante */
+        height: auto;
+        margin: 20px auto; /* Centraliza a imagem se o pai estiver em coluna */
+    }
+    
+    /* Reduz fontes grandes para caberem */
+    .intro-area h1 {
+        font-size: 1.8em; 
+    }
+}
+.container-projetos {
+        display: grid; 
+        grid-template-columns: 1fr; /* 1 fração = 1 coluna de largura total */
+        gap: 20px;
+    }
+
+    /* Centraliza a seção de conhecimentos técnicos */
+    .conhecimentos-tecnicos {
+        grid-template-columns: repeat(2, 1fr); /* Mantém 2 colunas para os cards pequenos, se for o caso */
+        gap: 15px;
+    }
+.navbar {
+        flex-direction: column; /* Coloca o logo e o menu um abaixo do outro */
         align-items: center;
     }
     
-    /* 5. Colocando os Cards de Projeto em Coluna */
-    /* Isso é fundamental, pois seus 3 cards não cabem lado a lado */
-    .container-projetos {
-        grid-template-columns: 1fr; /* Muda para uma coluna de largura total */
-        gap: 20px;
+    /* Empilha os links do menu */
+    .menu ul {
+        flex-direction: column; 
+        gap: 10px;
+        align-items: center;
+        padding: 10px 0;
     }
-}
