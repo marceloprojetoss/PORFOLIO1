@@ -435,3 +435,42 @@ height: 170px;
 html {
     scroll-behavior: smooth;
 }
+
+/* --- ESTILOS PARA CELULARES (Telas até 600px) --- */
+@media (max-width: 600px) {
+    
+    /* 1. Resetando o Layout Principal */
+    /* Garante que o conteúdo principal ocupe 100% */
+    .container {
+        padding: 0 15px; /* Adiciona um pequeno padding nas laterais */
+    }
+
+    /* 2. Corrigindo Imagens Grandes */
+    /* Qualquer imagem que você queira limitar no celular */
+    .bottom-section img { 
+        width: 100%; 
+        max-width: 300px; /* Limita o tamanho máximo para não estourar */
+        height: auto;
+    }
+
+    /* 3. Centralizando o Texto (Ex: Título Principal) */
+    .intro-area h1 {
+        text-align: center;
+        font-size: 2.2em; /* Diminui a fonte para caber */
+    }
+    
+    /* 4. Corrigindo o Menu de Navegação */
+    /* Em telas pequenas, é melhor empilhar o menu */
+    .menu ul {
+        flex-direction: column; /* Coloca os links um abaixo do outro */
+        gap: 10px;
+        align-items: center;
+    }
+    
+    /* 5. Colocando os Cards de Projeto em Coluna */
+    /* Isso é fundamental, pois seus 3 cards não cabem lado a lado */
+    .container-projetos {
+        grid-template-columns: 1fr; /* Muda para uma coluna de largura total */
+        gap: 20px;
+    }
+}
