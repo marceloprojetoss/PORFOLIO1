@@ -6,9 +6,14 @@ body {
 }
 
 .destaque {
-  font-family: 'Gravitas One', serif;
-  color: #0a48fa;
-  font-size: 22px; /*aumenta o tamanho da palavra destacada*/
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 35px;
+text-decoration: none;
+color: #262670;
+
 }
 
   body {
@@ -35,25 +40,29 @@ body {
 
     nav {
       display: flex;
-      gap: 30px;
+      gap: 20px;
     }
 
     nav a {
-      color: #0a48fa;
-      text-decoration: none;
-      font-size: 18px;
-      cursor: pointer;
-      transition: color 0.3s;
-    }
+    font-family: Arial, sans-serif;
+    color: #262670; /* Cor cinza escuro, discreto */
+    font-size: 1.2em;
+    font-weight: 500; /* Peso médio para não ser muito fino */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Transição suave no hover */
+}
+
+    
 
     nav a:hover {
-      color:rgb(5, 5, 106);
+      color: #333;
     }
   
 .container {
   position: relative; /* Para posicionar os elementos internos de forma absoluta */
   display: inline-block; /* Ou outro tipo de display que faça a div envolver a imagem */
   left: 0px;
+  flex-wrap: wrap;
 
 }
 
@@ -116,8 +125,9 @@ height: 170px;
 /* É uma boa prática adicionar isso para garantir que o container envolva todo o conteúdo flutuante */
 .container::after {
     content: "";
-    display: table;
+    display: flex;
     clear: both;
+    flex-basis: 100%
 }
 
 .bottom-section {
@@ -225,7 +235,7 @@ height: 170px;
 .conhecimentos-footer {
     margin-top: 40px; 
     padding: 20px 30px; 
-    border-top: 2px dashed #00008B; /* Linha tracejada (dashed) na cor azul escura */
+    border-top: 2px dashed #0a48fa; /* Linha tracejada (dashed) na cor azul escura */
     background-color: #FAFAFA; /* Fundo muito claro, quase branco */
     font-size: 0.95em;
     line-height: 1.6;
@@ -233,11 +243,195 @@ height: 170px;
 }
 
 .conhecimentos-footer p strong {
-    color: #00008B; 
+    color: #0a48fa; 
     font-weight: bold;
 }
 .grid-conhecimentos section:hover {
     transform: translateY(-2px); /* Sobe um pouco */
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra mais forte */
     transition: all 0.3s ease; /* Transição suave */
+}
+/* --- Estilo Geral da Seção --- */
+.secao-projetos {
+    margin-top: 80px;
+    padding: 0 50px;
+    flex-basis: 100%;
+}
+
+.secao-projetos h2 {
+    font-size: 2.5em; 
+    color: #333;
+    border-bottom: 2px solid #0a48fa; /* Linha de destaque azul */
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+}
+
+/* --- Container (Grade de Cards) --- */
+.container-projetos {
+    display: grid;
+    /* Define uma grade responsiva com colunas de no mínimo 300px */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px;
+}
+
+/* --- Estilo do Card Individual --- */
+.card-projeto {
+    background-color: #FFFFFF;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card-projeto:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-projeto img {
+    width: 100%;
+    height: auto;
+    display: block;
+    min-height: 260px; 
+    object-fit: cover; 
+}
+
+.card-projeto h3 {
+    padding: 15px 15px 5px;
+    color: #0a48fa; /* Título do projeto em azul */
+    margin-top: 0;
+}
+
+.card-projeto p {
+    padding: 0 15px 15px;
+    color: #555;
+    font-size: 0.9em;
+}
+
+/* --- Estilo dos Botões (Links) --- */
+.links-projeto {
+    padding: 0 15px 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.links-projeto a {
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9em;
+    transition: background-color 0.3s;
+    text-align: center;
+    flex-grow: 1; /* Permite que os botões ocupem o espaço disponível */
+}
+
+.btn-codigo {
+    background-color: #eee;
+    color: #444;
+}
+
+.btn-demo {
+    background-color: #0a48fa; /* Cor principal azul! */
+    color: white;
+}
+
+.btn-demo:hover {
+    background-color: #0a48fa; 
+}
+
+/* Media Query para Responsividade */
+@media (max-width: 600px) {
+    .secao-projetos {
+        padding: 0 20px;
+    }
+    .links-projeto {
+        flex-direction: column; /* Empilha os botões em telas muito pequenas */
+    }
+}
+/* --- Estilo Geral da Seção Contato --- */
+.secao-contato {
+    margin-top: 80px;
+    padding: 0 50px;
+    text-align: center;
+}
+
+.secao-contato h2 {
+    font-size: 2.5em; 
+    color: #333;
+    border-bottom: 2px solid #0a48fa; 
+    padding-bottom: 10px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.subtitulo {
+    color: #555;
+    font-size: 1.1em;
+    margin-bottom: 40px;
+}
+
+/* --- Container dos Itens de Contato --- */
+.contato-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+/* --- Estilo do Bloco Individual --- */
+.contato-item {
+    width: 400px;
+    padding: 50px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.contato-item:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    border-color: #0a48fa
+    font-size: 2.5em;
+    color: #0a48fa;
+    display: block;
+    margin-bottom: 10px;
+  
+}
+
+.contato-item h3 {
+    color: #333;
+    margin-top: 0;
+}
+
+.contato-item a {
+    color: #0a48fa;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.contato-item a:hover {
+    text-decoration: underline;
+}
+
+/* --- Estilo do Rodapé Final --- */
+.main-footer {
+    background-color: #0a48fa; /* Usando o azul escuro para dar um fechamento sólido */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 100px; /* Garante que ele fique bem separado da seção de Contatos */
+    font-size: 0.9em;
+    width: 100%; /* Garante que ele ocupe toda a largura */
+}
+
+.main-footer p {
+    margin: 0; 
+}
+
+html {
+    scroll-behavior: smooth;
 }
