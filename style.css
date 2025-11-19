@@ -27,8 +27,8 @@ header {
     justify-content: space-between;
 }
 
-.titulo {
-    font-size: 22px;
+.destaque {
+    font-size: 25px;
     font-weight: bold;
     color: #262670;
 }
@@ -131,7 +131,9 @@ nav a:hover {
     .container img {
         width: 80%;
         margin-top: 30px;
-        
+        max-width: 280px;
+        height: auto;
+        border-radius: 15px;
     }
 }
 
