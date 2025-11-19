@@ -1,94 +1,84 @@
+/* ===============================
+   RESET / BASE
+================================== */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-  background-color: lab(100% 0.01 -0.01);
-  color: #ffffff;
-  font-family: '', serif;
-  text-align: center;
-}
-
-.destaque {
-  font-family: "Oswald", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 35px;
-text-decoration: none;
-color: #262670;
-
-}
-
-  body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
-
-    header {
-      background-color: white;
-      color: white;
-      padding: 15px 40px;
-    }
-
-    .navbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .titulo {
-      font-size: 22px;
-      font-weight: bold;
-    }
-
-    nav {
-      display: flex;
-      gap: 20px;
-    }
-
-    nav a {
+    margin: 0;
+    background-color: #ffffff;
+    color: #333;
     font-family: Arial, sans-serif;
-    color: #262670; /* Cor cinza escuro, discreto */
+    text-align: center;
+}
+
+/* ===============================
+   NAVBAR
+================================== */
+header {
+    background-color: white;
+    padding: 15px 40px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.titulo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #262670;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: #262670;
     font-size: 1.2em;
-    font-weight: 500; /* Peso médio para não ser muito fino */
+    font-weight: 500;
     text-decoration: none;
-    transition: color 0.3s ease; /* Transição suave no hover */
+    transition: color 0.3s ease;
 }
 
-    
+nav a:hover {
+    color: #333;
+}
 
-    nav a:hover {
-      color: #333;
+/* NAVBAR RESPONSIVE */
+@media (max-width: 850px) {
+    nav {
+        display: none;
     }
-  
+    .navbar {
+        justify-content: center;
+    }
+}
+
+/* ===============================
+   INTRO / HERO
+================================== */
 .container {
-  position: relative; /* Para posicionar os elementos internos de forma absoluta */
-  display: inline-block; /* Ou outro tipo de display que faça a div envolver a imagem */
-  left: 0px;
-  flex-wrap: wrap;
-
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 5%;
+    flex-wrap: wrap;
 }
 
-.caixa-sobre {
-  position: absolute; /* Posiciona a caixa de forma absoluta dentro do container */
-  top: 415px;          /* Distância do topo */
-  left: 550px;         /* Distância da esquerda */
-width: 400px;
-height: 170px;
-  z-index: 2;         /* Garante que a caixa fique acima da imagem (que terá z-index: 1 por padrão) */
-  background-color: rgb(5, 5, 106); /* Exemplo de fundo semi-transparente */
-  padding: 10px;
-   
-
-}
-/* --- Estilização para o novo bloco da esquerda (texto e botão) --- */
 .intro-area {
-    /* Ajusta a largura para caber ao lado da imagem e do .caixa-sobre */
-    width: 45%; 
-    float: left; /* Garante que fique à esquerda dos outros elementos */
-    margin-top: 100px; /* Um pouco de espaço do topo, ajuste conforme o design */
+    width: 45%;
+    text-align: left;
 }
 
 .intro-area h1 {
-    font-size: 3em; /* Deixa o título grandão, ajuste o valor se precisar */
-    color: #333; /* Cor escura para o texto */
+    font-size: 3em;
+    color: #333;
     margin-bottom: 20px;
 }
 
@@ -99,217 +89,204 @@ height: 170px;
     line-height: 1.6;
 }
 
-/* --- Estilização do Botão de Download --- */
 .btn-download {
-    display: inline-block; /* Para que pareça um botão e possamos dar padding */
-    text-decoration: none; /* Remove o sublinhado padrão do link */
-    color: white; 
-    background-color: #0a48fa; /* Cor de fundo turquesa, use a cor do seu design */
-    padding: 15px 30px; 
-    border-radius: 5px; 
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background-color: #0a48fa;
+    padding: 15px 30px;
+    border-radius: 5px;
     font-weight: bold;
     letter-spacing: 1px;
-    transition: background-color 0.3s ease; /* Efeito suave ao passar o mouse */
+    transition: 0.3s ease;
 }
 
 .btn-download:hover {
-    background-color: #262670; /* Cor um pouco mais escura no hover */
+    background-color: #262670;
 }
 
-/* Se estiver usando Font Awesome, adicione um pequeno espaço entre o ícone e o texto */
-.btn-download i {
-    margin-right: 10px;
+.container img {
+    width: 45%;
+    max-width: 550px;
+    
 }
 
-/* --- Ajuste no .container para limpar o float --- */
-/* É uma boa prática adicionar isso para garantir que o container envolva todo o conteúdo flutuante */
-.container::after {
-    content: "";
-    display: flex;
-    clear: both;
-    flex-basis: 100%
+/* INTRO RESPONSIVE */
+@media (max-width: 1000px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro-area {
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .intro-area h1 {
+        font-size: 2.2em;
+    }
+
+    .container img {
+        width: 80%;
+        margin-top: 30px;
+        
+    }
 }
 
+/* ===============================
+   SEÇÃO SOBRE (BOTTOM SECTION)
+================================== */
 .bottom-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 80px 10%;
-  background-color: #ffffff; /* ou outra cor que combine com o topo */
-  color: #fff;
-  gap: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 10%;
+    background-color: #ffffff;
+    gap: 50px;
 }
 
 .image-container img {
-  width: 650px;
-  height: auto;
-  border-radius: 0px;
-  box-shadow:0px rgba(0, 0, 0, 0.1);
+    width: 650px;
+    max-width: 100%;
 }
 
 .text-container {
-  max-width: 500px;
+    max-width: 500px;
+    text-align: left;
 }
 
 .text-container h2 {
-  font-size: 2rem;
-  margin-bottom: 15px;
-  color: #555;
+    font-size: 2rem;
+    color: #555;
 }
 
 .text-container p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  color: #555;
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
 }
 
-/* Responsivo */
+/* RESPONSIVE */
 @media (max-width: 900px) {
-  .bottom-section {
-    flex-direction: column;
-    text-align: center;
-  }
+    .bottom-section {
+        flex-direction: column;
+        text-align: center;
+    }
 
-  .image-container img {
-    width: 80%;
-  }
-
-  .text-container {
-    max-width: 100%;
-  }
+    .text-container {
+        max-width: 100%;
+        text-align: center;
+    }
 }
-/* --- Estilo para a Estrutura Geral --- */
+
+/* ===============================
+   CONHECIMENTOS TÉCNICOS
+================================== */
 .conhecimentos-tecnicos {
-    /* Define a margem superior para separar da seção anterior */
-    margin-top: 80px; 
-    padding: 0 50px; /* Adiciona um padding nas laterais */
+    margin-top: 80px;
+    padding: 0 50px;
 }
 
-/* --- Estilo para o Título (Header) --- */
-.conhecimentos-tecnicos header h2 {
-    /* Repete o estilo de título que você está usando (Sobre mim) */
-    font-size: 2.5em; 
-    color: #333; /* Cor escura para o título */
-    /* Você pode adicionar uma borda ou linha se o seu estilo tiver */
-    border-bottom: 2px solid #0a48fa; /* Exemplo de linha azul escura */
+.conhecimentos-tecnicos h2 {
+    font-size: 2.5em;
+    color: #333;
+    border-bottom: 2px solid #0a48fa;
     padding-bottom: 10px;
 }
 
-/* --- Estilo para o Container (Grid/Flex) --- */
 .grid-conhecimentos {
-    display: flex; /* Define o layout como Flexbox */
-    gap: 40px; /* Espaço entre as colunas */
-    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha em telas menores */
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
     margin-top: 40px;
 }
 
-/* --- Estilo para os Blocos de Conhecimento (section) --- */
 .grid-conhecimentos section {
-    flex: 1; /* Permite que cada seção ocupe uma porção igual de espaço */
-    min-width: 250px; /* Garante que os blocos não fiquem muito estreitos */
-    
-    /* Adicionando um estilo visual (semelhante aos blocos do seu site) */
-    background-color: #F0F0F0; /* Fundo cinza claro para destacar */
-    border-left: 5px solid #0a48fa; /* Linha azul escura na lateral */
+    flex: 1;
+    min-width: 250px;
+    background-color: #F0F0F0;
+    border-left: 5px solid #0a48fa;
     padding: 20px;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
 }
 
-/* --- Estilo para a Lista de Itens --- */
 .grid-conhecimentos section h3 {
-    color: #0a48fa; /* Cor azul escura para os subtítulos */
-    margin-top: 0;
-}
-
-.grid-conhecimentos section ul {
-    list-style: none; /* Remove os marcadores de lista padrão */
-    padding-left: 0;
+    color: #0a48fa;
 }
 
 .grid-conhecimentos section li {
+    list-style: none;
     padding: 5px 0;
-    border-bottom: 1px dotted #ccc; /* Linha pontilhada sutil */
+    border-bottom: 1px dotted #ccc;
     color: #555;
 }
-.conhecimentos-footer {
-    margin-top: 40px; 
-    padding: 20px 30px; 
-    border-top: 2px dashed #0a48fa; /* Linha tracejada (dashed) na cor azul escura */
-    background-color: #FAFAFA; /* Fundo muito claro, quase branco */
-    font-size: 0.95em;
-    line-height: 1.6;
-    color: #444; 
+
+.grid-conhecimentos section:hover {
+    transform: translateY(-3px);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-.conhecimentos-footer p strong {
-    color: #0a48fa; 
-    font-weight: bold;
+.conhecimentos-footer {
+    margin-top: 40px;
+    padding: 20px;
+    border-top: 2px dashed #0a48fa;
+    background-color: #FAFAFA;
+    color: #444;
 }
-.grid-conhecimentos section:hover {
-    transform: translateY(-2px); /* Sobe um pouco */
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra mais forte */
-    transition: all 0.3s ease; /* Transição suave */
-}
-/* --- Estilo Geral da Seção --- */
+
+/* ===============================
+   PROJETOS
+================================== */
 .secao-projetos {
     margin-top: 80px;
     padding: 0 50px;
-    flex-basis: 100%;
 }
 
 .secao-projetos h2 {
-    font-size: 2.5em; 
+    font-size: 2.5em;
     color: #333;
-    border-bottom: 2px solid #0a48fa; /* Linha de destaque azul */
+    border-bottom: 2px solid #0a48fa;
     padding-bottom: 10px;
     margin-bottom: 40px;
 }
 
-/* --- Container (Grade de Cards) --- */
 .container-projetos {
     display: grid;
-    /* Define uma grade responsiva com colunas de no mínimo 300px */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
-/* --- Estilo do Card Individual --- */
 .card-projeto {
     background-color: #FFFFFF;
     border: 1px solid #ddd;
     border-radius: 8px;
-    overflow: hidden; 
+    overflow: hidden;
+    transition: 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
 }
 
 .card-projeto:hover {
-    transform: translateY(-5px); 
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
 }
 
 .card-projeto img {
     width: 100%;
-    height: auto;
-    display: block;
-    min-height: 260px; 
-    object-fit: cover; 
+    min-height: 260px;
+    object-fit: cover;
 }
 
 .card-projeto h3 {
-    padding: 15px 15px 5px;
-    color: #0a48fa; /* Título do projeto em azul */
-    margin-top: 0;
+    padding: 15px;
+    color: #0a48fa;
 }
 
 .card-projeto p {
     padding: 0 15px 15px;
     color: #555;
-    font-size: 0.9em;
 }
 
-/* --- Estilo dos Botões (Links) --- */
 .links-projeto {
     padding: 0 15px 15px;
     display: flex;
@@ -317,14 +294,11 @@ height: 170px;
 }
 
 .links-projeto a {
+    flex: 1;
     text-decoration: none;
-    padding: 10px 15px;
+    padding: 10px;
     border-radius: 5px;
     font-weight: bold;
-    font-size: 0.9em;
-    transition: background-color 0.3s;
-    text-align: center;
-    flex-grow: 1; /* Permite que os botões ocupem o espaço disponível */
 }
 
 .btn-codigo {
@@ -333,24 +307,23 @@ height: 170px;
 }
 
 .btn-demo {
-    background-color: #0a48fa; /* Cor principal azul! */
+    background-color: #0a48fa;
     color: white;
 }
 
-.btn-demo:hover {
-    background-color: #0a48fa; 
-}
-
-/* Media Query para Responsividade */
+/* RESPONSIVE */
 @media (max-width: 600px) {
     .secao-projetos {
         padding: 0 20px;
     }
     .links-projeto {
-        flex-direction: column; /* Empilha os botões em telas muito pequenas */
+        flex-direction: column;
     }
 }
-/* --- Estilo Geral da Seção Contato --- */
+
+/* ===============================
+   CONTATO
+================================== */
 .secao-contato {
     margin-top: 80px;
     padding: 0 50px;
@@ -358,21 +331,18 @@ height: 170px;
 }
 
 .secao-contato h2 {
-    font-size: 2.5em; 
+    font-size: 2.5em;
     color: #333;
-    border-bottom: 2px solid #0a48fa; 
+    border-bottom: 2px solid #0a48fa;
     padding-bottom: 10px;
     display: inline-block;
-    margin-bottom: 15px;
 }
 
 .subtitulo {
     color: #555;
-    font-size: 1.1em;
     margin-bottom: 40px;
 }
 
-/* --- Container dos Itens de Contato --- */
 .contato-container {
     display: flex;
     justify-content: center;
@@ -380,109 +350,93 @@ height: 170px;
     flex-wrap: wrap;
 }
 
-/* --- Estilo do Bloco Individual --- */
 .contato-item {
     width: 400px;
-    padding: 50px;
+    padding: 40px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    transition: all 0.3s ease;
-    text-align: center;
+    transition: 0.3s ease;
 }
 
 .contato-item:hover {
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     transform: translateY(-5px);
-    border-color: #0a48fa
-    font-size: 2.5em;
-    color: #0a48fa;
-    display: block;
-    margin-bottom: 10px;
-  
+    border-color: #0a48fa;
 }
 
 .contato-item h3 {
     color: #333;
-    margin-top: 0;
 }
 
 .contato-item a {
     color: #0a48fa;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1em;
 }
 
 .contato-item a:hover {
     text-decoration: underline;
 }
 
-/* --- Estilo do Rodapé Final --- */
+/* RESPONSIVE */
+@media (max-width: 700px) {
+    .contato-item {
+        width: 90%;
+        padding: 30px;
+    }
+}
+
+/* ===============================
+   FOOTER
+================================== */
 .main-footer {
-    background-color: #0a48fa; /* Usando o azul escuro para dar um fechamento sólido */
+    background-color: #0a48fa;
     color: white;
     text-align: center;
     padding: 20px 0;
-    margin-top: 100px; /* Garante que ele fique bem separado da seção de Contatos */
-    font-size: 0.9em;
-    width: 100%; /* Garante que ele ocupe toda a largura */
+    margin-top: 100px;
 }
 
-.main-footer p {
-    margin: 0; 
+/* FOTO + QUADRADO - RESPONSIVO */
+@media (max-width: 700px) {
+  .image-area {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .image-area img {
+    width: 90% !important;
+    height: auto;
+    margin: 0;
+  }
+
+  
 }
 
-html {
-    scroll-behavior: smooth;
+/* CARDS RESPONSIVOS */
+@media (max-width: 700px) {
+  .conhecimentos-tecnicos {
+    padding: 0 10px;
+  }
+
+  .card-conhecimento {
+    width: 100% !important;
+    margin: 0 auto 25px auto;
+    padding: 30px 15px;
+  }
+
+  .card-conhecimento h3 {
+    font-size: 20px;
+  }
 }
 
-@media (max-width: 600px) {
-    
-    /* Garante que o conteúdo central tenha algum respiro nas laterais */
-    .container {
-        padding: 0 15px; 
-    }
-    
-    /* Centraliza o conteúdo da primeira área */
-    .intro-area {
-        flex-direction: column; /* Coloca a foto e o texto um abaixo do outro */
-        text-align: center;
-        padding-top: 50px; /* Adiciona espaço extra no topo, se o menu não estiver fixo */
-    }
-
-    /* Reduz e limita o tamanho das imagens para caberem na tela */
-    .intro-area img, .bottom-section img { 
-        width: 80%; 
-        max-width: 200px; /* Garante que a foto de perfil não seja gigante */
-        height: auto;
-        margin: 20px auto; /* Centraliza a imagem se o pai estiver em coluna */
-    }
-    
-    /* Reduz fontes grandes para caberem */
-    .intro-area h1 {
-        font-size: 1.8em; 
-    }
+@media (max-width: 700px) {
+  .conhecimentos-tecnicos h2 {
+    font-size: 32px;
+    text-align: center;
+  }
 }
-.container-projetos {
-        display: grid; 
-        grid-template-columns: 1fr; /* 1 fração = 1 coluna de largura total */
-        gap: 20px;
-    }
-
-    /* Centraliza a seção de conhecimentos técnicos */
-    .conhecimentos-tecnicos {
-        grid-template-columns: repeat(2, 1fr); /* Mantém 2 colunas para os cards pequenos, se for o caso */
-        gap: 15px;
-    }
-.navbar {
-        flex-direction: column; /* Coloca o logo e o menu um abaixo do outro */
-        align-items: center;
-    }
-    
-    /* Empilha os links do menu */
-    .menu ul {
-        flex-direction: column; 
-        gap: 10px;
-        align-items: center;
-        padding: 10px 0;
-    }
