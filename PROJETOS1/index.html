@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Synapse Consultoria Digital</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">Synapse</div>
+      <nav class="nav" id="nav">
+        <a href="#home">Home</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <button id="navToggle" class="nav-toggle" aria-label="Abrir menu">
+        ☰
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="home" class="hero">
+    <div class="hero-inner container">
+      <div class="hero-text">
+        <h1>Consultoria digital que transforma presença em resultado</h1>
+        <p>
+          Estratégia, design e desenvolvimento com foco em conversão e performance.
+          Projetos escaláveis e com governança.
+        </p>
+        <div class="hero-cta">
+          <a class="btn primary" href="#contato">Fale com a gente</a>
+          <a class="btn ghost" href="#servicos">Nossos serviços</a>
+        </div>
+      </div>
+
+      <div class="hero-media">
+        <!-- OBS: caminho local da imagem que você enviou; ao publicar troque pelo caminho em img/ -->
+        <img src="/mnt/data/Captura de tela 2025-11-18 171926.png" alt="Mockup Synapse" class="hero-img" />
+      </div>
+    </div>
+  </main>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos" class="section services">
+    <div class="container">
+      <h2>Serviços</h2>
+      <p class="lead">Soluções completas para presença digital</p>
+
+      <div class="services-grid">
+        <article class="service-card">
+          <h3>Sites institucionais</h3>
+          <p>Design responsivo, performance e SEO técnico para sua marca.</p>
+        </article>
+
+        <article class="service-card">
+          <h3>Loja / E-commerce</h3>
+          <p>Plataformas otimizadas para vendas, integração com meios de pagamento e logística.</p>
+        </article>
+
+        <article class="service-card">
+          <h3>Manutenção & Growth</h3>
+          <p>Rotina de melhorias, monitoramento e aumento de conversão.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre" class="section about">
+    <div class="container about-inner">
+      <div class="about-media">
+        <!-- segunda imagem enviada -->
+        <img src="/mnt/data/Captura de tela 2025-11-18 171916.png" alt="Equipe/Imagem" class="about-img" />
+      </div>
+
+      <div class="about-text">
+        <h2>Quem somos</h2>
+        <p>
+          Synapse é uma consultoria digital focada em transformar presença online em negócio.
+          Trabalhamos com planejamento, execução e entrega técnica para projetos com resultado.
+        </p>
+        <ul>
+          <li>Planejamento estratégico</li>
+          <li>Design e desenvolvimento web</li>
+          <li>Otimização de conversão</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULÁRIO / CONTATO -->
+  <section id="contato" class="section contact">
+    <div class="container">
+      <h2>Entre em contato</h2>
+      <p class="lead">Quer um orçamento ou um papo rápido sobre seu projeto? Manda aí.</p>
+
+      <form id="contactForm" class="contact-form" novalidate>
+        <div class="row">
+          <input type="text" name="nome" id="nome" placeholder="Seu nome" required />
+          <input type="email" name="email" id="email" placeholder="Seu email" required />
+        </div>
+        <textarea name="mensagem" id="mensagem" rows="6" placeholder="Conta mais sobre o projeto..." required></textarea>
+
+        <div class="row actions">
+          <button type="submit" class="btn primary">Enviar</button>
+          <button type="reset" class="btn ghost">Limpar</button>
+        </div>
+
+        <p id="formMessage" class="form-message" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="ano"></span> Synapse Consultoria Digital — Desenvolvido por Marcelo</p>
+    </div>
+  </footer>
+
+  <script src="script-projeto.js"></script>
+</body>
+</html>
