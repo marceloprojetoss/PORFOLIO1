@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow Pro | Enterprise Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+
+    <aside class="sidebar">
+        
+        <div class="sidebar-logo">
+            <i class="fas fa-microchip"></i> TaskFlow <span>Pro</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#dashboard" class="active"><i class="fas fa-chart-line"></i> Painel Geral</a>
+            <a href="#tasks"><i class="fas fa-tasks"></i> Gerenciar Tarefas</a>
+            <a href="#database"><i class="fas fa-database"></i> PostgreSQL Status</a>
+            <a href="#terminal"><i class="fas fa-terminal"></i> Console Python</a>
+            <a href="#config"><i class="fas fa-cog"></i> Configurações</a>
+        </nav>
+        <div class="user-profile">
+            <div class="avatar">M</div>
+            <span>Marcelo Dev</span>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        
+        <section id="config" class="content-padding" style="display: none;">
+    <div class="app-card" style="height: auto;">
+        <div class="card-header">
+            <h2><i class="fas fa-user-cog"></i> Configurações do Sistema</h2>
+        </div>
+        
+        <div class="settings-form">
+            <div class="setting-group">
+                <label>Nome do Desenvolvedor</label>
+                <input type="text" id="userNameInput" placeholder="Ex: Marcelo Dev">
+            </div>
+
+            <div class="setting-group">
+                <label>Cor de Destaque (Accent Color)</label>
+                <select id="themeColorInput">
+                    <option value="#8b5cf6">Roxo (Default)</option>
+                    <option value="#10b981">Verde Esmeralda</option>
+                    <option value="#3b82f6">Azul Oceano</option>
+                    <option value="#f59e0b">Laranja Admin</option>
+                </select>
+            </div>
+
+            <div class="setting-group">
+                <label>Segurança de Dados</label>
+                <button id="resetDB" class="btn-danger">
+                    <i class="fas fa-trash-alt"></i> Resetar Banco de Dados (SQL)
+                </button>
+                <p class="warning-text">Isso apagará permanentemente todos os registros do PostgreSQL simulado.</p>
+            </div>
+
+            <button id="saveSettings" class="btn-save">Salvar Alterações</button>
+        </div>
+    </div>
+</section>
+
+        <header class="dash-header">
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Buscar no sistema...">
+            </div>
+            <div class="header-actions">
+                <span class="status-badge">Server: Online</span>
+                <i class="far fa-bell"></i>
+            </div>
+        </header>
+
+        <section id="dashboard" class="content-padding">
+            <div class="top-stats">
+                <div class="stat-card">
+                    <p>Total de Requisições</p>
+                    <h3>1,284</h3>
+                    <span class="trend up">+12%</span>
+                </div>
+                <div class="stat-card">
+                    <p>Database Health</p>
+                    <h3>99.8%</h3>
+                    <span class="trend">Optimal</span>
+                </div>
+                <div class="stat-card">
+                    <p>Memória em Uso</p>
+                    <h3>256MB</h3>
+                    <span class="trend">Normal</span>
+                </div>
+            </div>
+
+            <div class="system-grid">
+                <div class="app-card" id="tasks">
+                    <div class="card-header">
+                        <h2><i class="fas fa-layer-group"></i> Gerenciador de Processos</h2>
+                    </div>
+                    <div class="input-area">
+                        <input type="text" id="taskInput" placeholder="Inserir nova string de comando...">
+                        <button id="addBtn">Executar</button>
+                    </div>
+                    <div id="taskList" class="task-container">
+                        </div>
+                </div>
+
+                <div class="app-card" id="terminal">
+                    <div class="card-header">
+                        <h2><i class="fas fa-code"></i> Logs do Servidor (Python 3.12)</h2>
+                    </div>
+                    <div class="terminal-view">
+                        <p class="log-line"><span>[16:45:01]</span> Connection established to PostgreSQL...</p>
+                        <p class="log-line"><span>[16:45:05]</span> Initializing core engine...</p>
+                        <p class="log-line green"><span>[16:45:10]</span> TaskFlow Pro is running on port 5432.</p>
+                        <p id="dynamicLog" class="log-line"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

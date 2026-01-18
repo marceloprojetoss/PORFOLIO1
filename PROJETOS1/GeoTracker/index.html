@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoTracker Elite | Global Monitoring</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="geo-body">
+
+    <header class="top-nav">
+        <div class="logo-area">
+            <i class="fas fa-satellite-dish pulse"></i>
+            <span>GEOTRACKER <strong>ELITE</strong></span>
+        </div>
+        <div class="system-stats">
+            <div class="stat"><small>STATUS</small> <span class="green">ENCRYPTED</span></div>
+            <div id="real-clock">00:00:00</div>
+        </div>
+    </header>
+
+    <main class="dashboard-layout">
+        <aside class="geo-sidebar">
+            <div class="search-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" id="geoSearch" placeholder="Rastrear ID Global...">
+            </div>
+
+            <div class="fleet-overview">
+                <h3>Frota Ativa <span id="unit-count">(0)</span></h3>
+                <div id="unitList" class="unit-scroll"></div>
+            </div>
+
+            <div class="sidebar-footer">
+                <button id="addUnitBtn" class="btn-main"><i class="fas fa-plus"></i> Nova Unidade</button>
+                <button id="exportCSV" class="btn-outline"><i class="fas fa-download"></i> Exportar CSV</button>
+</div>
+            <div class="sidebar-links">
+            <a href="javascript:void(0)" onclick="openModal('aboutModal')">Sobre Nós</a>
+            <span>|</span>
+            <a href="javascript:void(0)" onclick="openModal('contactModal')">Contato</a>
+            </div>
+        </aside>
+
+        <section class="map-wrapper">
+            <div id="map"></div>
+            
+            <div class="floating-cards">
+                <div class="glass-card telemetry">
+                    <div class="card-tag">TELEMETRIA ATIVA</div>
+                    <h2 id="current-speed">0 <small>km/h</small></h2>
+                    <p id="coords">0.0000, 0.0000</p>
+                </div>
+
+                <div class="glass-card logs">
+                    <div class="card-tag">SISTEMA LOGS</div>
+                    <div id="terminal-logs" class="mono-text">> Aguardando sinal...</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+
+    <div class="sidebar-links">
+    <a href="javascript:void(0)" onclick="openModal('aboutModal')">Sobre Nós</a>
+    <a href="javascript:void(0)" onclick="openModal('contactModal')">Contato</a>
+</div>
+
+<div id="aboutModal" class="modal">
+    <div class="modal-content glass-card">
+        <span class="close" onclick="closeModal('aboutModal')">&times;</span>
+        <div class="card-tag">INSTITUCIONAL</div>
+        <h2>Sobre o GeoTracker</h2>
+        <p>O GeoTracker Elite nasceu da necessidade de monitoramento logístico em tempo real com precisão satelital. Nosso objetivo é fornecer uma interface de alta performance para gestão de frotas globais, integrando dados de telemetria complexos em um ambiente visual intuitivo.</p>
+        <p>Utilizamos tecnologias de ponta como <strong>Python</strong> para o processamento de dados e <strong>Leaflet.js</strong> para geolocalização precisa.</p>
+    </div>
+</div>
+
+<div id="contactModal" class="modal">
+    <div class="modal-content glass-card">
+        <span class="close" onclick="closeModal('contactModal')">&times;</span>
+        <div class="card-tag">SUPORTE TÉCNICO</div>
+        <h2>Fale Conosco</h2>
+        <p>Precisa de integração com seu banco de dados PostgreSQL ou suporte customizado?</p>
+        <div class="contact-info">
+            <p><i class="fas fa-envelope"></i> dev.marcelo@geotracker.pro</p>
+            <p><i class="fas fa-map-marker-alt"></i> São Paulo, Tech District - BR</p>
+        </div>
+        <form class="mini-form">
+            <input type="text" placeholder="Seu E-mail">
+            <button class="btn-main">Enviar Mensagem</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

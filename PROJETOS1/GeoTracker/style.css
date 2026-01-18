@@ -1,0 +1,155 @@
+:root {
+    --bg: #020617;
+    --side: #0f172a;
+    --accent: #22d3ee;
+    --border: rgba(34, 211, 238, 0.2);
+    --glass: rgba(15, 23, 42, 0.8);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+body { background: var(--bg); color: white; height: 100vh; overflow: hidden; }
+
+.top-nav { height: 60px; background: var(--side); display: flex; justify-content: space-between; align-items: center; padding: 0 30px; border-bottom: 1px solid var(--border); }
+.logo-area { display: flex; align-items: center; gap: 15px; font-weight: 800; letter-spacing: 2px; color: var(--accent); }
+.pulse { animation: pulse 2s infinite; }
+
+.dashboard-layout { display: flex; height: calc(100vh - 60px); }
+.geo-sidebar { width: 350px; background: var(--side); border-right: 1px solid var(--border); padding: 20px; display: flex; flex-direction: column; gap: 20px; }
+
+.search-wrapper { background: #1e293b; padding: 12px; border-radius: 8px; display: flex; gap: 10px; border: 1px solid var(--border); }
+.search-wrapper input { background: none; border: none; color: white; width: 100%; outline: none; }
+
+.unit-scroll { flex: 1; overflow-y: auto; margin: 15px 0; }
+.unit-item { background: #1e293b; padding: 15px; border-radius: 10px; margin-bottom: 10px; border-left: 4px solid var(--accent); cursor: pointer; transition: 0.3s; }
+.unit-item:hover { background: #334155; }
+
+.btn-main, .btn-outline { width: 100%; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer; margin-bottom: 10px; border: none; }
+.btn-main { background: var(--accent); color: #000; }
+.btn-outline { background: transparent; border: 1px solid var(--accent); color: var(--accent); }
+
+.map-wrapper { flex: 1; position: relative; }
+#map { height: 100%; width: 100%; filter: brightness(0.8) contrast(1.2); }
+
+.floating-cards { position: absolute; top: 20px; left: 20px; right: 20px; display: flex; justify-content: space-between; z-index: 1000; pointer-events: none; }
+.glass-card { background: var(--glass); backdrop-filter: blur(10px); padding: 15px; border-radius: 12px; border: 1px solid var(--border); width: 250px; pointer-events: all; }
+.card-tag { font-size: 0.6rem; color: var(--accent); font-weight: bold; margin-bottom: 5px; }
+.mono-text { font-family: monospace; font-size: 0.7rem; color: #4ade80; height: 80px; overflow-y: hidden; }
+
+@keyframes pulse { 0% { opacity: 0.4; } 50% { opacity: 1; } 100% { opacity: 0.4; } }
+
+/* Links na Sidebar */
+.sidebar-links {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 10px;
+}
+.sidebar-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.sidebar-links a:hover { color: var(--accent); }
+
+/* Estilo dos Modais */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(2, 6, 23, 0.9);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    margin: 10% auto;
+    padding: 30px !important;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    pointer-events: all;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    color: #94a3b8;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.mini-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.mini-form input {
+    background: #0f172a;
+    border: 1px solid var(--border);
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+}
+
+/* Garante que a sidebar use todo o espaço mas não transborde */
+.geo-sidebar { 
+    width: 350px; 
+    background: var(--side); 
+    border-right: 1px solid var(--border); 
+    padding: 20px; 
+    display: flex; 
+    flex-direction: column; 
+    height: 100%; /* Ocupa a altura total */
+}
+
+/* A lista de unidades cresce e ganha scroll se necessário */
+.fleet-overview {
+    flex: 1; /* Ocupa o espaço restante */
+    display: flex;
+    flex-direction: column;
+    min-height: 0; /* Importante para o scroll funcionar em flexbox */
+    margin-bottom: 15px;
+}
+
+.unit-scroll {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+/* Estilo para a barra de rolagem ficar elegante */
+.unit-scroll::-webkit-scrollbar { width: 4px; }
+.unit-scroll::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
+
+/* Rodapé sempre embaixo */
+.sidebar-footer {
+    padding-top: 15px;
+    border-top: 1px solid var(--border);
+    background: var(--side);
+}
+
+.sidebar-links {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+    font-size: 0.65rem;
+    color: #475569;
+}
+
+.sidebar-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.sidebar-links a:hover { color: var(--accent); }
